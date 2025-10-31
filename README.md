@@ -1,2 +1,4 @@
 # 2025_PEdwards_Methylation
 Epigenetic analysis of red-backed vole hippocampal methylomes across population cycle phases using whole-genome enzymatic methyl sequencing (EM-seq).
+
+This repository contains analysis scripts and workflows for the red-backed vole (Clethrionomys rutilus) hippocampal methylation project. Whole-genome enzymatic methyl sequencing (EM-seq) was performed on 25 wild-caught individuals collected across different population cycle phases (peak, decline, and low density). The study aims to identify differentially methylated CpG sites and genomic regions associated with population phase, providing insight into how ecological fluctuations influence epigenetic regulation in natural mammal populations.

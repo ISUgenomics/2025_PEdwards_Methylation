@@ -87,7 +87,7 @@ The above script creates a database from the gff3 file and extracts gene-level i
 **Contents of the TSV file:**
 
 ```bash
-head -n 11 gene_annotation_summary.tsv
+head -n 13 gene_annotation_summary.tsv
 ```
 
 *Output*
@@ -125,7 +125,7 @@ This TSV file contains a simplified summary of all genes in the vole genome. Eac
 
 This format should probably make it easy to filter, sort, and analyze gene features for downstream methylation analysis.
 
-## Getting more inforamtion about the genes
+## Getting more information about the genes
 
 workdir: `/work/gif4/satheesh/2025/12_PEdwards_Methylation/01_Data`
 

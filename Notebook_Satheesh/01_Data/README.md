@@ -660,3 +660,100 @@ dev.off()
 # Save output
 write.csv(df2, "DMR_nearest_genes_LowDecline_strandAware.csv", row.names = FALSE)
 ```
+
+## Final complete analysis 
+
+Running the Rscript `00_Scripts/02_batch_strand_aware_annotation.R`. This will analyse all DML and DMR results files obtained from the DSS analysis.
+
+```bash 
+Rscript 00_Scripts/02_batch_strand_aware_annotation.R
+```
+
+```
+=== Summary Statistics ===
+
+
+ DML_nearest_genes_LowDecline_strandAware.csv
+  Feature distribution:
+
+downstream       exon intergenic     intron   promoter 
+        12         18        554        265          3 
+  Direction distribution:
+
+ downstream overlapping    upstream 
+        256         281         315 
+
+ DML_nearest_genes_PeakDecline_strandAware.csv
+  Feature distribution:
+
+downstream       exon intergenic     intron   promoter 
+         8          7        479        243          9 
+  Direction distribution:
+
+ downstream overlapping    upstream 
+        205         251         290 
+
+ DML_nearest_genes_PeakLow_strandAware.csv
+  Feature distribution:
+
+downstream       exon intergenic     intron   promoter 
+        13         19        841        479         15 
+  Direction distribution:
+
+ downstream overlapping    upstream 
+        387         500         480 
+
+ DMR_nearest_genes_LowDecline_strandAware.csv
+  Feature distribution:
+
+downstream       exon intergenic     intron   promoter 
+         4         14        243        170          7 
+  Direction distribution:
+
+ downstream overlapping    upstream 
+        107         186         145 
+
+ DMR_nearest_genes_PeakDecline_strandAware.csv
+  Feature distribution:
+
+downstream       exon intergenic     intron   promoter 
+         6          9        207        132          3 
+  Direction distribution:
+
+ downstream overlapping    upstream 
+         89         141         127 
+
+ DMR_nearest_genes_PeakLow_strandAware.csv
+  Feature distribution:
+
+downstream       exon intergenic     intron   promoter 
+         4         14        279        166          3 
+  Direction distribution:
+
+ downstream overlapping    upstream 
+        134         182         150 
+```
+
+### Understanding the Output
+
+The script produces two types of classifications for each DML/DMR:
+
+**Feature Distribution** — Classifies where the DML/DMR falls relative to gene structure:
+
+| Feature | Definition |
+|---------|------------|
+| **promoter** | Within 2kb upstream of the transcription start site (TSS) |
+| **exon** | Overlaps an exon |
+| **intron** | Within gene body but not overlapping an exon |
+| **downstream** | Within 2kb downstream of the transcription end site (TES) |
+| **intergenic** | More than 2kb from any gene |
+
+**Direction Distribution** — Classifies the DML/DMR position relative to the nearest gene (strand-aware):
+
+| Direction | Definition |
+|-----------|------------|
+| **upstream** | Located before the gene (5' side, accounting for strand) |
+| **downstream** | Located after the gene (3' side, accounting for strand) |
+| **overlapping** | Overlaps the gene body |
+
+**Note:** "Upstream" in Direction and "promoter" in Feature are related but not identical. A DML/DMR classified as "upstream" in direction will be labeled "promoter" in feature only if it is ≤2kb from the TSS; otherwise it is classified as "intergenic".

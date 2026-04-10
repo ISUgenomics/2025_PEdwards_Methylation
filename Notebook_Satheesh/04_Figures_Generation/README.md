@@ -1,8 +1,6 @@
 workdir: `/Users/vsatheesh/Documents/ISU/GIF/gif_projects/2025/04_PEdwards_Methylation`
 
-
-
-
+```bash
 Loading BSseq object (this may take a minute)...
 BSseq object loaded: 50971214 CpG sites x 25 samples
 Sample names: P (2017) | T (2018) | AP (2019) | M (2017) | AZ (2019) | L (2017) | AA (2018) | AU (2019) | U (2018) | AR (2019) | AM (2019) | G (2017) | AO (2019) | W (2018) | AT (2019) | J (2017) | I (2017) | AV (2019) | O (2017) | A (2017) | AC (2018) | S (2018) | X (2018) | Y (2018) | AL (2019)
@@ -72,4 +70,15 @@ Group means per locus:
   Fig3B   Igf1r      Igf1r_intron_95bp Decline      77.2 8
   Fig3B   Igf1r      Igf1r_intron_95bp     Low      33.3 9
 
-Done. Next step: run plot_figures_2_and_3.py
+Done. Next step: run plot_figures_2_and_3_v2.R
+```
+
+Run the plotting script: 
+
+```bash
+Rscript plot_figures_2_and_3_v2.R
+```
+
+![](../assets/images/Figure2_promoter_DMCs_DMRs_v2.png)
+
+![](../assets/images/Figure3_genebody_DMRs_v2.png)

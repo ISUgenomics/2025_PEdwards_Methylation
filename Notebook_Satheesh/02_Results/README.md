@@ -46,3 +46,6 @@ Bar plots showing the distribution of DMLs/DMRs across genomic features.
 ## Script
 
 These results were generated using `00_Scripts/02_batch_strand_aware_annotation.R`.
+
+## Methodology
+
